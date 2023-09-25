@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_components_pages",
+  "info": {
+    "displayName": "pages",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.multilingual-text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "page_number": {
+      "type": "integer"
+    }
+  }
+}

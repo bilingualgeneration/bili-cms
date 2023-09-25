@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "stories",
+  "info": {
+    "singularName": "story",
+    "pluralName": "stories",
+    "displayName": "Story",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "displayName": "multilingual text",
+      "type": "component",
+      "repeatable": true,
+      "component": "components.multilingual-text"
+    },
+    "cover": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "age_min": {
+      "type": "integer"
+    },
+    "age_max": {
+      "type": "integer"
+    },
+    "page": {
+      "displayName": "pages",
+      "type": "component",
+      "repeatable": true,
+      "component": "components.pages"
+    },
+    "handle": {
+      "type": "string"
+    },
+    "uuid": {
+      "type": "uid"
+    }
+  }
+}
