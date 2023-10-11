@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_story_factory_game_word_groups",
+  "info": {
+    "displayName": "word group",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "word": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.multilingual-text-and-audio"
+    },
+    "position": {
+      "type": "integer",
+      "required": true,
+      "unique": true,
+      "min": 1,
+      "default": 1
+    }
+  }
+}

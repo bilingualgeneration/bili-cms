@@ -361,43 +361,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiStoryStory extends Schema.CollectionType {
-  collectionName: 'stories';
-  info: {
-    singularName: 'story';
-    pluralName: 'stories';
-    displayName: 'Story';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    title: Attribute.Component<'components.multilingual-text', true>;
-    cover: Attribute.Media;
-    age_min: Attribute.Integer;
-    age_max: Attribute.Integer;
-    page: Attribute.Component<'components.pages', true>;
-    handle: Attribute.String;
-    uuid: Attribute.UID;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::story.story',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::story.story',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -713,6 +676,184 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiBingoGameBingoGame extends Schema.CollectionType {
+  collectionName: 'bingo_games';
+  info: {
+    singularName: 'bingo-game';
+    pluralName: 'bingo-games';
+    displayName: 'Bingo Game';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    uuid: Attribute.UID;
+    handle: Attribute.String & Attribute.Required & Attribute.Unique;
+    pack_name: Attribute.Component<'common.multilingual-text', true>;
+    words: Attribute.Component<'bingo-game.words', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::bingo-game.bingo-game',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::bingo-game.bingo-game',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiIntruderGameIntruderGame extends Schema.CollectionType {
+  collectionName: 'intruder_games';
+  info: {
+    singularName: 'intruder-game';
+    pluralName: 'intruder-games';
+    displayName: 'Intruder Game';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    UUID: Attribute.UID;
+    handle: Attribute.String & Attribute.Required & Attribute.Unique;
+    word_group: Attribute.Component<'intruder-game.word-group', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::intruder-game.intruder-game',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::intruder-game.intruder-game',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiMemoryGameMemoryGame extends Schema.CollectionType {
+  collectionName: 'memory_games';
+  info: {
+    singularName: 'memory-game';
+    pluralName: 'memory-games';
+    displayName: 'Memory Game';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    UUID: Attribute.UID;
+    handle: Attribute.String & Attribute.Required & Attribute.Unique;
+    words: Attribute.Component<'memory-game.words', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::memory-game.memory-game',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::memory-game.memory-game',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiStoryStory extends Schema.CollectionType {
+  collectionName: 'stories';
+  info: {
+    singularName: 'story';
+    pluralName: 'stories';
+    displayName: 'Story';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.Component<'common.multilingual-text', true> &
+      Attribute.Required;
+    cover: Attribute.Media & Attribute.Required;
+    age_min: Attribute.Integer &
+      Attribute.SetMinMax<{
+        min: 0;
+      }>;
+    age_max: Attribute.Integer &
+      Attribute.SetMinMax<{
+        min: 1;
+      }>;
+    page: Attribute.Component<'story.pages', true> & Attribute.Required;
+    handle: Attribute.String & Attribute.Required & Attribute.Unique;
+    uuid: Attribute.UID;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::story.story',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::story.story',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiStoryFactoryGameStoryFactoryGame
+  extends Schema.CollectionType {
+  collectionName: 'story_factory_games';
+  info: {
+    singularName: 'story-factory-game';
+    pluralName: 'story-factory-games';
+    displayName: 'Story Factory Game';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    handle: Attribute.String & Attribute.Required & Attribute.Unique;
+    pack_name: Attribute.Component<'common.multilingual-text', true>;
+    uuid: Attribute.UID;
+    word_group: Attribute.Component<'intruder-game.word-group', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::story-factory-game.story-factory-game',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::story-factory-game.story-factory-game',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Shared {
     export interface ContentTypes {
@@ -723,13 +864,17 @@ declare module '@strapi/strapi' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::story.story': ApiStoryStory;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::i18n.locale': PluginI18NLocale;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::bingo-game.bingo-game': ApiBingoGameBingoGame;
+      'api::intruder-game.intruder-game': ApiIntruderGameIntruderGame;
+      'api::memory-game.memory-game': ApiMemoryGameMemoryGame;
+      'api::story.story': ApiStoryStory;
+      'api::story-factory-game.story-factory-game': ApiStoryFactoryGameStoryFactoryGame;
     }
   }
 }
