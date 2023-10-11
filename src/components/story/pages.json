@@ -1,16 +1,11 @@
 {
   "collectionName": "components_components_pages",
   "info": {
-    "displayName": "pages",
+    "displayName": "page",
     "description": ""
   },
   "options": {},
   "attributes": {
-    "text": {
-      "type": "component",
-      "repeatable": true,
-      "component": "components.multilingual-text"
-    },
     "image": {
       "type": "media",
       "multiple": false,
@@ -23,7 +18,16 @@
       ]
     },
     "page_number": {
-      "type": "integer"
+      "unique": true,
+      "type": "integer",
+      "min": 1,
+      "default": 1,
+      "required": true
+    },
+    "text": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.multilingual-text-and-audio"
     }
   }
 }

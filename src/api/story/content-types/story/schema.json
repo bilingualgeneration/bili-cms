@@ -16,12 +16,13 @@
       "displayName": "multilingual text",
       "type": "component",
       "repeatable": true,
-      "component": "components.multilingual-text"
+      "component": "common.multilingual-text",
+      "required": true
     },
     "cover": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
@@ -30,19 +31,24 @@
       ]
     },
     "age_min": {
-      "type": "integer"
+      "type": "integer",
+      "min": 0
     },
     "age_max": {
-      "type": "integer"
+      "type": "integer",
+      "min": 1
     },
     "page": {
       "displayName": "pages",
       "type": "component",
       "repeatable": true,
-      "component": "components.pages"
+      "component": "story.pages",
+      "required": true
     },
     "handle": {
-      "type": "string"
+      "type": "string",
+      "unique": true,
+      "required": true
     },
     "uuid": {
       "type": "uid"

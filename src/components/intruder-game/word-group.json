@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_intruder_game_word_groups",
+  "info": {
+    "displayName": "word group",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "word": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.multilingual-text-and-audio"
+    }
+  }
+}

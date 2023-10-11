@@ -1,7 +1,8 @@
 {
   "collectionName": "components_components_multilingual_texts",
   "info": {
-    "displayName": "multilingual text"
+    "displayName": "multilingual text",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -11,10 +12,12 @@
         "en",
         "es",
         "es-inc"
-      ]
+      ],
+      "required": true
     },
     "text": {
-      "type": "text"
+      "type": "text",
+      "required": true
     }
   }
 }

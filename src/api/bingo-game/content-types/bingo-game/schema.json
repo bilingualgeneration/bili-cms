@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bingo_games",
+  "info": {
+    "singularName": "bingo-game",
+    "pluralName": "bingo-games",
+    "displayName": "Bingo Game"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "uuid": {
+      "type": "uid"
+    },
+    "handle": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "pack_name": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.multilingual-text"
+    },
+    "words": {
+      "displayName": "words",
+      "type": "component",
+      "repeatable": true,
+      "component": "bingo-game.words"
+    }
+  }
+}

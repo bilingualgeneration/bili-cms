@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_common_multilingual_text_and_audios",
+  "info": {
+    "displayName": "multilingual text and audio"
+  },
+  "options": {},
+  "attributes": {
+    "language": {
+      "type": "enumeration",
+      "enum": [
+        "en",
+        "es",
+        "es-inc"
+      ],
+      "required": true
+    },
+    "text": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

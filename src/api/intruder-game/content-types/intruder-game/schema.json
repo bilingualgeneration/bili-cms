@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "intruder_games",
+  "info": {
+    "singularName": "intruder-game",
+    "pluralName": "intruder-games",
+    "displayName": "Intruder Game",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "UUID": {
+      "type": "uid"
+    },
+    "handle": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "word_group": {
+      "displayName": "word group",
+      "type": "component",
+      "repeatable": true,
+      "component": "intruder-game.word-group"
+    }
+  }
+}
