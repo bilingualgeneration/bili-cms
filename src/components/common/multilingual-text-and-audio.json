@@ -1,7 +1,8 @@
 {
   "collectionName": "components_common_multilingual_text_and_audios",
   "info": {
-    "displayName": "multilingual text and audio"
+    "displayName": "multilingual text and audio",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -16,6 +17,17 @@
     },
     "text": {
       "type": "string",
+      "required": true
+    },
+    "audio": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true,
       "required": true
     }
   }

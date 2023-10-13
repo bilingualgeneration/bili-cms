@@ -15,11 +15,13 @@ export interface CommonMultilingualTextAndAudio extends Schema.Component {
   collectionName: 'components_common_multilingual_text_and_audios';
   info: {
     displayName: 'multilingual text and audio';
+    description: '';
   };
   attributes: {
     language: Attribute.Enumeration<['en', 'es', 'es-inc']> &
       Attribute.Required;
     text: Attribute.String & Attribute.Required;
+    audio: Attribute.Media & Attribute.Required;
   };
 }
 
