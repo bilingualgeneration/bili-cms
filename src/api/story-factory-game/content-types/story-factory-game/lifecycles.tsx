@@ -1,6 +1,7 @@
+// AM
 import { uuid } from 'uuidv4';
 import { db } from "../../../../../config/firebase"
-import { doc, setDoc, deleteDoc, updateDoc } from 'firebase/firestore';
+import { doc, setDoc, deleteDoc, updateDoc, writeBatch } from 'firebase/firestore';
 
 const COLLECTION = "story-factory-game"
 
@@ -11,25 +12,42 @@ export default {
 
     async afterCreate(event) {
         const { result } = event;
+        const { createdBy,updatedBy, ...dataToStore } = result; // Exclude createdBy, updatedBy
 
         await setDoc(doc(db, COLLECTION, result.uuid), {
-            handle: result.handle,
-            pack_name: result.pack_name,
-            word_group: result.word_group,
+            dataToStore
         });
     },
 
     async afterUpdate(event) {
         const { result } = event;
+        const { createdBy,updatedBy, ...dataToUpdate } = result; // Exclude createdBy, updatedBy
+
         await updateDoc(doc(db, COLLECTION, event.result.uuid), {
-            handle: result.handle,
-            pack_name: result.pack_name,
-            word_group: result.word_group,
+            dataToUpdate
         })
-        
+
     },
 
     async afterDelete(event) {
         await deleteDoc(doc(db, COLLECTION, event.result.uuid))
+        
+    },
+
+    async beforeDeleteMany(event){
+        
+        const entries = await strapi.entityService.findMany('api::story-factory-game.story-factory-game', {
+            filters: event.params.where,
+            fields: ['uuid'],
+            limit: 1000
+          });
+
+        const batch = writeBatch(db)
+
+        for (const entry of entries) {
+            batch.delete(doc(db, COLLECTION, entry.uuid))
+        }
+
+        await batch.commit();
     }
 }
