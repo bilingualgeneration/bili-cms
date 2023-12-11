@@ -16,6 +16,7 @@
     "@strapi/plugin-users-permissions": "4.13.7",
     "@strapi/strapi": "4.13.7",
     "better-sqlite3": "8.6.0",
+    "firebase": "^10.7.1",
     "strapi-advanced-uuid": "^1.0.11",
     "uuidv4": "^6.2.13"
   },
