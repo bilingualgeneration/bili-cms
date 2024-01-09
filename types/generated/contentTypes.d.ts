@@ -721,7 +721,7 @@ export interface ApiIntruderGameIntruderGame extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    UUID: Attribute.UID;
+    uuid: Attribute.UID;
     handle: Attribute.String & Attribute.Required & Attribute.Unique;
     word_group: Attribute.Component<'intruder-game.word-group', true>;
     createdAt: Attribute.DateTime;
@@ -754,7 +754,7 @@ export interface ApiMemoryGameMemoryGame extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    UUID: Attribute.UID;
+    uuid: Attribute.UID;
     handle: Attribute.String & Attribute.Required & Attribute.Unique;
     words: Attribute.Component<'memory-game.words', true>;
     createdAt: Attribute.DateTime;

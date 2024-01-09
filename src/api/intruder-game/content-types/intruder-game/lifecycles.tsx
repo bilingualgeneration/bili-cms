@@ -12,8 +12,9 @@ export default {
 
     async afterCreate(event) {
         const { result } = event;
+        
         const { createdBy,updatedBy, ...dataToStore } = result; // Exclude createdBy, updatedBy
-
+        console.log("This is result from Intruder Game !!!!!!!", JSON.stringify(result, null, 2))
         await setDoc(doc(db, COLLECTION, result.uuid), {
          ...dataToStore
         });
@@ -36,7 +37,7 @@ export default {
 
     async beforeDeleteMany(event){
         
-        const entries = await strapi.entityService.findMany('api::story-factory-game.story-factory-game', {
+        const entries = await strapi.entityService.findMany('api::intruder-game.intruder-game', {
             filters: event.params.where,
             fields: ['uuid'],
             limit: 1000

@@ -13,7 +13,6 @@ export default {
     async afterCreate(event) {
         const { result } = event;
         const { createdBy,updatedBy, ...dataToStore } = result; // Exclude createdBy, updatedBy
-
         await setDoc(doc(db, COLLECTION, result.uuid), {
          ...dataToStore
         });
