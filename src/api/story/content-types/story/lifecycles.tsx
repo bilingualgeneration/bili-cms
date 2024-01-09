@@ -36,7 +36,7 @@ export default {
 
     async beforeDeleteMany(event){
         
-        const entries = await strapi.entityService.findMany('api::story-factory-game.story-factory-game', {
+        const entries = await strapi.entityService.findMany('api::story.story', {
             filters: event.params.where,
             fields: ['uuid'],
             limit: 1000
