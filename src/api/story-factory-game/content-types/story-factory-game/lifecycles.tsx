@@ -15,7 +15,7 @@ export default {
         const { createdBy,updatedBy, ...dataToStore } = result; // Exclude createdBy, updatedBy
 
         await setDoc(doc(db, COLLECTION, result.uuid), {
-            dataToStore
+         ...dataToStore
         });
     },
 
@@ -23,8 +23,8 @@ export default {
         const { result } = event;
         const { createdBy,updatedBy, ...dataToUpdate } = result; // Exclude createdBy, updatedBy
 
-        await updateDoc(doc(db, COLLECTION, event.result.uuid), {
-            dataToUpdate
+        await setDoc(doc(db, COLLECTION, event.result.uuid), {
+            ...dataToUpdate
         })
 
     },
