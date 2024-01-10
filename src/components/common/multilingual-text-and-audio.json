@@ -20,15 +20,12 @@
       "required": true
     },
     "audio": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
       "type": "media",
-      "multiple": true,
-      "required": true
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "audios"
+      ]
     }
   }
 }

@@ -6,18 +6,47 @@
   },
   "options": {},
   "attributes": {
-    "image": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
+    "word_1_image": {
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ]
+      ],
+      "type": "media",
+      "multiple": false
     },
-    "word": {
+    "word_1_audio": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.multilingual-text-and-audio"
+    },
+    "word_2_image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "word_2_audio": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.multilingual-text-and-audio"
+    },
+    "word_3_image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "word_3_audio": {
       "type": "component",
       "repeatable": true,
       "component": "common.multilingual-text-and-audio"
