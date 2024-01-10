@@ -676,39 +676,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
-export interface ApiBingoGameBingoGame extends Schema.CollectionType {
-  collectionName: 'bingo_games';
-  info: {
-    singularName: 'bingo-game';
-    pluralName: 'bingo-games';
-    displayName: 'Bingo Game';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    uuid: Attribute.UID;
-    handle: Attribute.String & Attribute.Required & Attribute.Unique;
-    pack_name: Attribute.Component<'common.multilingual-text', true>;
-    words: Attribute.Component<'bingo-game.words', true>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::bingo-game.bingo-game',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::bingo-game.bingo-game',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiIntruderGameIntruderGame extends Schema.CollectionType {
   collectionName: 'intruder_games';
   info: {
@@ -724,6 +691,13 @@ export interface ApiIntruderGameIntruderGame extends Schema.CollectionType {
     uuid: Attribute.UID;
     handle: Attribute.String & Attribute.Required & Attribute.Unique;
     word_group: Attribute.Component<'intruder-game.word-group', true>;
+    pack_name: Attribute.Component<'common.multilingual-text', true>;
+    intruder_number: Attribute.Integer &
+      Attribute.Required &
+      Attribute.SetMinMax<{
+        min: 1;
+        max: 3;
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -835,7 +809,8 @@ export interface ApiStoryFactoryGameStoryFactoryGame
     handle: Attribute.String & Attribute.Required & Attribute.Unique;
     pack_name: Attribute.Component<'common.multilingual-text', true>;
     uuid: Attribute.UID;
-    word_group: Attribute.Component<'intruder-game.word-group', true>;
+    word_group: Attribute.Component<'story-factory-game.word-group', true>;
+    cover_image: Attribute.Media & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -870,7 +845,6 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
-      'api::bingo-game.bingo-game': ApiBingoGameBingoGame;
       'api::intruder-game.intruder-game': ApiIntruderGameIntruderGame;
       'api::memory-game.memory-game': ApiMemoryGameMemoryGame;
       'api::story.story': ApiStoryStory;

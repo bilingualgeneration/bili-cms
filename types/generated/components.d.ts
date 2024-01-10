@@ -1,16 +1,5 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface BingoGameWords extends Schema.Component {
-  collectionName: 'components_bingo_game_words';
-  info: {
-    displayName: 'words';
-  };
-  attributes: {
-    word: Attribute.Component<'common.multilingual-text-and-audio', true>;
-    image: Attribute.Media & Attribute.Required;
-  };
-}
-
 export interface CommonMultilingualTextAndAudio extends Schema.Component {
   collectionName: 'components_common_multilingual_text_and_audios';
   info: {
@@ -45,8 +34,21 @@ export interface IntruderGameWordGroup extends Schema.Component {
     description: '';
   };
   attributes: {
-    image: Attribute.Media & Attribute.Required;
-    word: Attribute.Component<'common.multilingual-text-and-audio', true>;
+    word_1_image: Attribute.Media;
+    word_1_audio: Attribute.Component<
+      'common.multilingual-text-and-audio',
+      true
+    >;
+    word_2_image: Attribute.Media;
+    word_2_audio: Attribute.Component<
+      'common.multilingual-text-and-audio',
+      true
+    >;
+    word_3_image: Attribute.Media;
+    word_3_audio: Attribute.Component<
+      'common.multilingual-text-and-audio',
+      true
+    >;
   };
 }
 
@@ -102,7 +104,6 @@ export interface StoryPages extends Schema.Component {
 declare module '@strapi/strapi' {
   export module Shared {
     export interface Components {
-      'bingo-game.words': BingoGameWords;
       'common.multilingual-text-and-audio': CommonMultilingualTextAndAudio;
       'common.multilingual-text': CommonMultilingualText;
       'intruder-game.word-group': IntruderGameWordGroup;
