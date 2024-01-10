@@ -28,7 +28,15 @@
     "word_group": {
       "type": "component",
       "repeatable": true,
-      "component": "intruder-game.word-group"
+      "component": "story-factory-game.word-group"
+    },
+    "cover_image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }
