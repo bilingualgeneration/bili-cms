@@ -6,17 +6,18 @@
   },
   "options": {},
   "attributes": {
-    "word": {
-      "type": "component",
-      "repeatable": true,
-      "component": "common.multilingual-text-and-audio"
-    },
     "position": {
       "type": "integer",
       "required": true,
-      "unique": true,
+      "unique": false,
       "min": 1,
-      "default": 1
+      "default": 1,
+      "max": 4
+    },
+    "word": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.multilingual-text"
     }
   }
 }

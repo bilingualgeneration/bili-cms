@@ -34,21 +34,15 @@ export interface IntruderGameWordGroup extends Schema.Component {
     description: '';
   };
   attributes: {
-    word_1_image: Attribute.Media;
-    word_1_audio: Attribute.Component<
-      'common.multilingual-text-and-audio',
-      true
-    >;
-    word_2_image: Attribute.Media;
-    word_2_audio: Attribute.Component<
-      'common.multilingual-text-and-audio',
-      true
-    >;
-    word_3_image: Attribute.Media;
-    word_3_audio: Attribute.Component<
-      'common.multilingual-text-and-audio',
-      true
-    >;
+    intruder_image: Attribute.Media & Attribute.Required;
+    intruder_text: Attribute.String & Attribute.Required;
+    intruder_audio: Attribute.Media & Attribute.Required;
+    word_2_image: Attribute.Media & Attribute.Required;
+    word_2_text: Attribute.String & Attribute.Required;
+    word_2_audio: Attribute.Media & Attribute.Required;
+    word_3_image: Attribute.Media & Attribute.Required;
+    word_3_text: Attribute.String & Attribute.Required;
+    word_3_audio: Attribute.Media & Attribute.Required;
   };
 }
 
@@ -71,14 +65,14 @@ export interface StoryFactoryGameWordGroup extends Schema.Component {
     description: '';
   };
   attributes: {
-    word: Attribute.Component<'common.multilingual-text-and-audio', true>;
     position: Attribute.Integer &
       Attribute.Required &
-      Attribute.Unique &
       Attribute.SetMinMax<{
         min: 1;
+        max: 4;
       }> &
       Attribute.DefaultTo<1>;
+    word: Attribute.Component<'common.multilingual-text', true>;
   };
 }
 

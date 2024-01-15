@@ -6,50 +6,65 @@
   },
   "options": {},
   "attributes": {
-    "word_1_image": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
+    "intruder_image": {
       "type": "media",
-      "multiple": false
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
-    "word_1_audio": {
-      "type": "component",
-      "repeatable": true,
-      "component": "common.multilingual-text-and-audio"
+    "intruder_text": {
+      "type": "string",
+      "required": true
+    },
+    "intruder_audio": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "audios"
+      ]
     },
     "word_2_image": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
       "type": "media",
-      "multiple": false
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "word_2_text": {
+      "type": "string",
+      "required": true
     },
     "word_2_audio": {
-      "type": "component",
-      "repeatable": true,
-      "component": "common.multilingual-text-and-audio"
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "audios"
+      ]
     },
     "word_3_image": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
       "type": "media",
-      "multiple": false
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "word_3_text": {
+      "type": "string",
+      "required": true
     },
     "word_3_audio": {
-      "type": "component",
-      "repeatable": true,
-      "component": "common.multilingual-text-and-audio"
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "audios"
+      ]
     }
   }
 }
