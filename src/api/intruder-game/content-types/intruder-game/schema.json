@@ -24,17 +24,13 @@
       "displayName": "word group",
       "type": "component",
       "repeatable": true,
-      "component": "intruder-game.word-group"
+      "component": "intruder-game.word-group",
+      "required": true
     },
     "pack_name": {
       "type": "component",
       "repeatable": true,
-      "component": "common.multilingual-text"
-    },
-    "intruder_number": {
-      "type": "integer",
-      "min": 1,
-      "max": 3,
+      "component": "common.multilingual-text",
       "required": true
     }
   }

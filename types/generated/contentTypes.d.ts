@@ -690,14 +690,10 @@ export interface ApiIntruderGameIntruderGame extends Schema.CollectionType {
   attributes: {
     UUID: Attribute.UID;
     handle: Attribute.String & Attribute.Required & Attribute.Unique;
-    word_group: Attribute.Component<'intruder-game.word-group', true>;
-    pack_name: Attribute.Component<'common.multilingual-text', true>;
-    intruder_number: Attribute.Integer &
-      Attribute.Required &
-      Attribute.SetMinMax<{
-        min: 1;
-        max: 3;
-      }>;
+    word_group: Attribute.Component<'intruder-game.word-group', true> &
+      Attribute.Required;
+    pack_name: Attribute.Component<'common.multilingual-text', true> &
+      Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
