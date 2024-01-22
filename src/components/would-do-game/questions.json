@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_would_do_game_questions",
+  "info": {
+    "displayName": "questions"
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.multilingual-text"
+    }
+  }
+}

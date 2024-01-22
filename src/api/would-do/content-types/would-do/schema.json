@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "would_dos",
+  "info": {
+    "singularName": "would-do",
+    "pluralName": "would-dos",
+    "displayName": "Would Do",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "uuid": {
+      "type": "uid"
+    },
+    "handle": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "pack_name": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.multilingual-text",
+      "required": true
+    },
+    "cover_image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "questions": {
+      "displayName": "questions",
+      "type": "component",
+      "repeatable": true,
+      "component": "would-do-game.questions",
+      "required": true
+    }
+  }
+}

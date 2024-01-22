@@ -95,6 +95,16 @@ export interface StoryPages extends Schema.Component {
   };
 }
 
+export interface WouldDoGameQuestions extends Schema.Component {
+  collectionName: 'components_would_do_game_questions';
+  info: {
+    displayName: 'questions';
+  };
+  attributes: {
+    question: Attribute.Component<'common.multilingual-text', true>;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Shared {
     export interface Components {
@@ -104,6 +114,7 @@ declare module '@strapi/strapi' {
       'memory-game.words': MemoryGameWords;
       'story-factory-game.word-group': StoryFactoryGameWordGroup;
       'story.pages': StoryPages;
+      'would-do-game.questions': WouldDoGameQuestions;
     }
   }
 }

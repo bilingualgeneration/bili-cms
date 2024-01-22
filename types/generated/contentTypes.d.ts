@@ -825,6 +825,43 @@ export interface ApiStoryFactoryGameStoryFactoryGame
   };
 }
 
+export interface ApiWouldDoWouldDo extends Schema.CollectionType {
+  collectionName: 'would_dos';
+  info: {
+    singularName: 'would-do';
+    pluralName: 'would-dos';
+    displayName: 'Would Do';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    uuid: Attribute.UID;
+    handle: Attribute.String & Attribute.Required & Attribute.Unique;
+    pack_name: Attribute.Component<'common.multilingual-text', true> &
+      Attribute.Required;
+    cover_image: Attribute.Media & Attribute.Required;
+    questions: Attribute.Component<'would-do-game.questions', true> &
+      Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::would-do.would-do',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::would-do.would-do',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Shared {
     export interface ContentTypes {
@@ -845,6 +882,7 @@ declare module '@strapi/strapi' {
       'api::memory-game.memory-game': ApiMemoryGameMemoryGame;
       'api::story.story': ApiStoryStory;
       'api::story-factory-game.story-factory-game': ApiStoryFactoryGameStoryFactoryGame;
+      'api::would-do.would-do': ApiWouldDoWouldDo;
     }
   }
 }
