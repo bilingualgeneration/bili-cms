@@ -10,6 +10,7 @@
       "type": "enumeration",
       "enum": [
         "en",
+        "en-inc",
         "es",
         "es-inc"
       ],

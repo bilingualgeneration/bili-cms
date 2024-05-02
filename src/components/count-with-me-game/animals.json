@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_count_with_me_game_animals",
+  "info": {
+    "displayName": "animals",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "text_color": {
+      "type": "string",
+      "required": true
+    },
+    "x_percent": {
+      "type": "integer"
+    },
+    "y_percent": {
+      "type": "integer"
+    }
+  }
+}

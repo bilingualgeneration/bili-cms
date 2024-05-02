@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_story_vocabulary_list_words",
+  "info": {
+    "displayName": "word",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "word": {
+      "displayName": "multilingual text audio and definition",
+      "type": "component",
+      "repeatable": true,
+      "component": "story-vocabulary-list.multilingual-text-audio-and-definition"
+    },
+    "handle": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

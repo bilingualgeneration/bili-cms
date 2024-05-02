@@ -1,0 +1,52 @@
+{
+  "collectionName": "components_count_with_me_game_animal_groups",
+  "info": {
+    "displayName": "animal_group",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "game_text": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.multilingual-text-and-audio",
+      "required": true
+    },
+    "fact_text": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.multilingual-text-and-audio",
+      "required": true
+    },
+    "animals": {
+      "displayName": "animals",
+      "type": "component",
+      "repeatable": true,
+      "component": "count-with-me-game.animals"
+    },
+    "game_background_image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "fact_background_image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "counting_text": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.multilingual-text-and-audio"
+    },
+    "counting_voice": {
+      "type": "string"
+    }
+  }
+}

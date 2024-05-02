@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tell_me_abouts",
+  "info": {
+    "singularName": "tell-me-about",
+    "pluralName": "tell-me-abouts",
+    "displayName": "Tell Me About",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "uuid": {
+      "type": "uid"
+    },
+    "handle": {
+      "type": "string"
+    },
+    "pack_name": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.multilingual-text"
+    },
+    "cover_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "questions": {
+      "type": "component",
+      "repeatable": true,
+      "component": "would-do-game.questions"
+    }
+  }
+}

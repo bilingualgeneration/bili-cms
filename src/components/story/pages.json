@@ -17,13 +17,6 @@
         "audios"
       ]
     },
-    "page_number": {
-      "unique": true,
-      "type": "integer",
-      "min": 1,
-      "default": 1,
-      "required": true
-    },
     "text": {
       "type": "component",
       "repeatable": true,

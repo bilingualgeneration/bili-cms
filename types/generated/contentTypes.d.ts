@@ -676,6 +676,109 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiAffirmationAffirmation extends Schema.CollectionType {
+  collectionName: 'affirmations';
+  info: {
+    singularName: 'affirmation';
+    pluralName: 'affirmations';
+    displayName: 'Affirmations';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    handle: Attribute.String;
+    cover: Attribute.Media;
+    cards: Attribute.Component<'affirmations.affirmations-card', true>;
+    uuid: Attribute.UID;
+    pack_name: Attribute.Component<'common.multilingual-text', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::affirmation.affirmation',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::affirmation.affirmation',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiCountWithMeGameCountWithMeGame
+  extends Schema.CollectionType {
+  collectionName: 'count_with_me_games';
+  info: {
+    singularName: 'count-with-me-game';
+    pluralName: 'count-with-me-games';
+    displayName: 'Count with Me Game';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    uuid: Attribute.UID;
+    handle: Attribute.String & Attribute.Required & Attribute.Unique;
+    pack_name: Attribute.Component<'common.multilingual-text', true> &
+      Attribute.Required;
+    groups: Attribute.Component<'count-with-me-game.animal-group', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::count-with-me-game.count-with-me-game',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::count-with-me-game.count-with-me-game',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiDragNDropGameDragNDropGame extends Schema.CollectionType {
+  collectionName: 'drag_n_drop_games';
+  info: {
+    singularName: 'drag-n-drop-game';
+    pluralName: 'drag-n-drop-games';
+    displayName: 'DragNDrop Game';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    handle: Attribute.String & Attribute.Required & Attribute.Unique;
+    segments: Attribute.Component<'drag-n-drop-game.drag-n-drop-segment', true>;
+    uuid: Attribute.String & Attribute.Unique;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::drag-n-drop-game.drag-n-drop-game',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::drag-n-drop-game.drag-n-drop-game',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiIntruderGameIntruderGame extends Schema.CollectionType {
   collectionName: 'intruder_games';
   info: {
@@ -694,6 +797,7 @@ export interface ApiIntruderGameIntruderGame extends Schema.CollectionType {
       Attribute.Required;
     pack_name: Attribute.Component<'common.multilingual-text', true> &
       Attribute.Required;
+    cover_image: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -759,7 +863,7 @@ export interface ApiStoryStory extends Schema.CollectionType {
   attributes: {
     title: Attribute.Component<'common.multilingual-text', true> &
       Attribute.Required;
-    cover: Attribute.Media & Attribute.Required;
+    cover_image: Attribute.Media & Attribute.Required;
     age_min: Attribute.Integer &
       Attribute.SetMinMax<{
         min: 0;
@@ -768,9 +872,33 @@ export interface ApiStoryStory extends Schema.CollectionType {
       Attribute.SetMinMax<{
         min: 1;
       }>;
-    page: Attribute.Component<'story.pages', true> & Attribute.Required;
+    pages: Attribute.Component<'story.pages', true> & Attribute.Required;
     handle: Attribute.String & Attribute.Required & Attribute.Unique;
     uuid: Attribute.UID;
+    dnd_letters: Attribute.Component<'story.dnd-letters', true>;
+    author: Attribute.String & Attribute.Required;
+    illustrator: Attribute.String & Attribute.Required;
+    narrator: Attribute.String & Attribute.Required;
+    multiple_image_text: Attribute.Component<
+      'common.multilingual-text-and-audio',
+      true
+    >;
+    multiple_image_correct_image: Attribute.Media;
+    multiple_image_incorrect_image_1: Attribute.Media;
+    multiple_image_incorrect_image_2: Attribute.Media;
+    multiple_image_incorrect_image_3: Attribute.Media;
+    multiple_syllable_text: Attribute.Component<
+      'common.multilingual-text-and-audio',
+      true
+    >;
+    multiple_syllable_correct_image: Attribute.Media;
+    multiple_syllable_correct_audio: Attribute.Media;
+    multiple_syllable_incorrect_image_1: Attribute.Media;
+    multiple_syllable_incorrect_audio_1: Attribute.Media;
+    multiple_syllable_incorrect_image_2: Attribute.Media;
+    multiple_syllable_incorrect_audio_2: Attribute.Media;
+    multiple_syllable_incorrect_image_3: Attribute.Media;
+    multiple_syllable_incorrect_audio_3: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -818,6 +946,75 @@ export interface ApiStoryFactoryGameStoryFactoryGame
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::story-factory-game.story-factory-game',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiStoryVocabularyListStoryVocabularyList
+  extends Schema.CollectionType {
+  collectionName: 'story_vocabulary_lists';
+  info: {
+    singularName: 'story-vocabulary-list';
+    pluralName: 'story-vocabulary-lists';
+    displayName: 'Story Vocabulary List';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    words: Attribute.Component<'story-vocabulary-list.word', true>;
+    uuid: Attribute.String & Attribute.Unique;
+    story_handle: Attribute.String & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::story-vocabulary-list.story-vocabulary-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::story-vocabulary-list.story-vocabulary-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiTellMeAboutTellMeAbout extends Schema.CollectionType {
+  collectionName: 'tell_me_abouts';
+  info: {
+    singularName: 'tell-me-about';
+    pluralName: 'tell-me-abouts';
+    displayName: 'Tell Me About';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    uuid: Attribute.UID;
+    handle: Attribute.String;
+    pack_name: Attribute.Component<'common.multilingual-text', true>;
+    cover_image: Attribute.Media;
+    questions: Attribute.Component<'would-do-game.questions', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::tell-me-about.tell-me-about',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::tell-me-about.tell-me-about',
       'oneToOne',
       'admin::user'
     > &
@@ -878,10 +1075,15 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::affirmation.affirmation': ApiAffirmationAffirmation;
+      'api::count-with-me-game.count-with-me-game': ApiCountWithMeGameCountWithMeGame;
+      'api::drag-n-drop-game.drag-n-drop-game': ApiDragNDropGameDragNDropGame;
       'api::intruder-game.intruder-game': ApiIntruderGameIntruderGame;
       'api::memory-game.memory-game': ApiMemoryGameMemoryGame;
       'api::story.story': ApiStoryStory;
       'api::story-factory-game.story-factory-game': ApiStoryFactoryGameStoryFactoryGame;
+      'api::story-vocabulary-list.story-vocabulary-list': ApiStoryVocabularyListStoryVocabularyList;
+      'api::tell-me-about.tell-me-about': ApiTellMeAboutTellMeAbout;
       'api::would-do.would-do': ApiWouldDoWouldDo;
     }
   }

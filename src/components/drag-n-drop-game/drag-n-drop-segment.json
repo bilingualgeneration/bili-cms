@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_drag_n_drop_game_drag_n_drop_segments",
+  "info": {
+    "displayName": "Drag N Drop Segment"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "audio_on_drag": {
+      "allowedTypes": [
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "audio_on_drop": {
+      "allowedTypes": [
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "language": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "story_vocabulary_lists",
+  "info": {
+    "singularName": "story-vocabulary-list",
+    "pluralName": "story-vocabulary-lists",
+    "displayName": "Story Vocabulary List",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "words": {
+      "displayName": "word",
+      "type": "component",
+      "repeatable": true,
+      "component": "story-vocabulary-list.word"
+    },
+    "uuid": {
+      "type": "string",
+      "unique": true
+    },
+    "story_handle": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

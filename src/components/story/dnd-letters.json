@@ -1,12 +1,12 @@
 {
-  "collectionName": "components_would_do_game_questions",
+  "collectionName": "components_story_dnd_letters",
   "info": {
-    "displayName": "questions",
+    "displayName": "dnd_letters",
     "description": ""
   },
   "options": {},
   "attributes": {
-    "question": {
+    "letter": {
       "type": "component",
       "repeatable": true,
       "component": "common.multilingual-text-and-audio"

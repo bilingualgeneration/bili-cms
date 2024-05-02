@@ -19,7 +19,7 @@
       "component": "common.multilingual-text",
       "required": true
     },
-    "cover": {
+    "cover_image": {
       "type": "media",
       "multiple": false,
       "required": true,
@@ -38,7 +38,7 @@
       "type": "integer",
       "min": 1
     },
-    "page": {
+    "pages": {
       "displayName": "pages",
       "type": "component",
       "repeatable": true,
@@ -52,6 +52,130 @@
     },
     "uuid": {
       "type": "uid"
+    },
+    "dnd_letters": {
+      "displayName": "dnd_letters",
+      "type": "component",
+      "repeatable": true,
+      "component": "story.dnd-letters"
+    },
+    "author": {
+      "type": "string",
+      "required": true
+    },
+    "illustrator": {
+      "type": "string",
+      "required": true
+    },
+    "narrator": {
+      "type": "string",
+      "required": true
+    },
+    "multiple_image_text": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.multilingual-text-and-audio"
+    },
+    "multiple_image_correct_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "multiple_image_incorrect_image_1": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "multiple_image_incorrect_image_2": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "multiple_image_incorrect_image_3": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "multiple_syllable_text": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.multilingual-text-and-audio"
+    },
+    "multiple_syllable_correct_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "multiple_syllable_correct_audio": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "audios"
+      ]
+    },
+    "multiple_syllable_incorrect_image_1": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "multiple_syllable_incorrect_audio_1": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "audios"
+      ]
+    },
+    "multiple_syllable_incorrect_image_2": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "multiple_syllable_incorrect_audio_2": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "audios"
+      ]
+    },
+    "multiple_syllable_incorrect_image_3": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "multiple_syllable_incorrect_audio_3": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "audios"
+      ]
     }
   }
 }

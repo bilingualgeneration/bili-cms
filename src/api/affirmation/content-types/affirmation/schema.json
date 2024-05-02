@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "affirmations",
+  "info": {
+    "singularName": "affirmation",
+    "pluralName": "affirmations",
+    "displayName": "Affirmations",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "handle": {
+      "type": "string"
+    },
+    "cover": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "cards": {
+      "displayName": "affirmations_card",
+      "type": "component",
+      "repeatable": true,
+      "component": "affirmations.affirmations-card"
+    },
+    "uuid": {
+      "type": "uid"
+    },
+    "pack_name": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.multilingual-text"
+    }
+  }
+}

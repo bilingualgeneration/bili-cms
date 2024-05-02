@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "drag_n_drop_games",
+  "info": {
+    "singularName": "drag-n-drop-game",
+    "pluralName": "drag-n-drop-games",
+    "displayName": "DragNDrop Game"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "handle": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "segments": {
+      "displayName": "Drag N Drop Segment",
+      "type": "component",
+      "repeatable": true,
+      "component": "drag-n-drop-game.drag-n-drop-segment"
+    },
+    "uuid": {
+      "type": "string",
+      "unique": true
+    }
+  }
+}
