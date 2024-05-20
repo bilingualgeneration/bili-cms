@@ -1,0 +1,43 @@
+{
+  "collectionName": "components_dnd_game_dn_d_pieces",
+  "info": {
+    "displayName": "DnD Piece",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "audio_on_drag": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "audios"
+      ]
+    },
+    "audio_on_drop": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "audios"
+      ]
+    },
+    "count": {
+      "type": "integer",
+      "required": true,
+      "default": 1
+    }
+  }
+}

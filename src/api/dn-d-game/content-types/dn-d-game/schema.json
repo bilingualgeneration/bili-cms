@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dn_d_games",
+  "info": {
+    "singularName": "dn-d-game",
+    "pluralName": "dn-d-games",
+    "displayName": "DnD Game",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "handle": {
+      "type": "string",
+      "required": true
+    },
+    "uuid": {
+      "type": "string"
+    },
+    "target": {
+      "type": "string",
+      "required": true
+    },
+    "pieces": {
+      "displayName": "DnD Piece",
+      "type": "component",
+      "repeatable": true,
+      "component": "dnd-game.dn-d-piece"
+    },
+    "audio": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "audios"
+      ]
+    },
+    "language": {
+      "type": "enumeration",
+      "enum": [
+        "es",
+        "es-inc",
+        "en"
+      ],
+      "required": true
+    },
+    "story": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::story.story",
+      "inversedBy": "dnd_games"
+    }
+  }
+}

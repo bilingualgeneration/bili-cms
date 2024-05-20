@@ -1,7 +1,8 @@
 {
   "collectionName": "components_story_vocabulary_list_multilingual_text_audio_and_definitions",
   "info": {
-    "displayName": "multilingual text audio and definition"
+    "displayName": "multilingual text audio and definition",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -14,20 +15,20 @@
       "required": true
     },
     "word_audio": {
-      "allowedTypes": [
-        "audios"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "audios"
+      ]
     },
     "definition_audio": {
-      "allowedTypes": [
-        "audios"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "audios"
+      ]
     },
     "language": {
       "type": "enumeration",
@@ -36,6 +37,10 @@
         "es-inc",
         "en"
       ]
+    },
+    "syllable_breakdown": {
+      "type": "string",
+      "required": true
     }
   }
 }

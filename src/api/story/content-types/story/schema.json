@@ -176,6 +176,12 @@
       "allowedTypes": [
         "audios"
       ]
+    },
+    "dnd_games": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::dn-d-game.dn-d-game",
+      "mappedBy": "story"
     }
   }
 }

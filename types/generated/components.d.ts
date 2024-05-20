@@ -76,6 +76,21 @@ export interface CountWithMeGameAnimals extends Schema.Component {
   };
 }
 
+export interface DndGameDnDPiece extends Schema.Component {
+  collectionName: 'components_dnd_game_dn_d_pieces';
+  info: {
+    displayName: 'DnD Piece';
+    description: '';
+  };
+  attributes: {
+    image: Attribute.Media & Attribute.Required;
+    text: Attribute.String & Attribute.Required;
+    audio_on_drag: Attribute.Media & Attribute.Required;
+    audio_on_drop: Attribute.Media & Attribute.Required;
+    count: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<1>;
+  };
+}
+
 export interface DragNDropGameDragNDropSegment extends Schema.Component {
   collectionName: 'components_drag_n_drop_game_drag_n_drop_segments';
   info: {
@@ -144,6 +159,7 @@ export interface StoryVocabularyListMultilingualTextAudioAndDefinition
   collectionName: 'components_story_vocabulary_list_multilingual_text_audio_and_definitions';
   info: {
     displayName: 'multilingual text audio and definition';
+    description: '';
   };
   attributes: {
     word: Attribute.String & Attribute.Required;
@@ -151,6 +167,7 @@ export interface StoryVocabularyListMultilingualTextAudioAndDefinition
     word_audio: Attribute.Media & Attribute.Required;
     definition_audio: Attribute.Media & Attribute.Required;
     language: Attribute.Enumeration<['es', 'es-inc', 'en']>;
+    syllable_breakdown: Attribute.String & Attribute.Required;
   };
 }
 
@@ -224,6 +241,7 @@ declare module '@strapi/strapi' {
       'common.multilingual-text': CommonMultilingualText;
       'count-with-me-game.animal-group': CountWithMeGameAnimalGroup;
       'count-with-me-game.animals': CountWithMeGameAnimals;
+      'dnd-game.dn-d-piece': DndGameDnDPiece;
       'drag-n-drop-game.drag-n-drop-segment': DragNDropGameDragNDropSegment;
       'intruder-game.word-group': IntruderGameWordGroup;
       'memory-game.words': MemoryGameWords;

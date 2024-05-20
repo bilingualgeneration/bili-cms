@@ -747,6 +747,48 @@ export interface ApiCountWithMeGameCountWithMeGame
   };
 }
 
+export interface ApiDnDGameDnDGame extends Schema.CollectionType {
+  collectionName: 'dn_d_games';
+  info: {
+    singularName: 'dn-d-game';
+    pluralName: 'dn-d-games';
+    displayName: 'DnD Game';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    handle: Attribute.String & Attribute.Required;
+    uuid: Attribute.String;
+    target: Attribute.String & Attribute.Required;
+    pieces: Attribute.Component<'dnd-game.dn-d-piece', true>;
+    audio: Attribute.Media;
+    language: Attribute.Enumeration<['es', 'es-inc', 'en']> &
+      Attribute.Required;
+    story: Attribute.Relation<
+      'api::dn-d-game.dn-d-game',
+      'manyToOne',
+      'api::story.story'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::dn-d-game.dn-d-game',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::dn-d-game.dn-d-game',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiDragNDropGameDragNDropGame extends Schema.CollectionType {
   collectionName: 'drag_n_drop_games';
   info: {
@@ -899,6 +941,11 @@ export interface ApiStoryStory extends Schema.CollectionType {
     multiple_syllable_incorrect_audio_2: Attribute.Media;
     multiple_syllable_incorrect_image_3: Attribute.Media;
     multiple_syllable_incorrect_audio_3: Attribute.Media;
+    dnd_games: Attribute.Relation<
+      'api::story.story',
+      'oneToMany',
+      'api::dn-d-game.dn-d-game'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1077,6 +1124,7 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::affirmation.affirmation': ApiAffirmationAffirmation;
       'api::count-with-me-game.count-with-me-game': ApiCountWithMeGameCountWithMeGame;
+      'api::dn-d-game.dn-d-game': ApiDnDGameDnDGame;
       'api::drag-n-drop-game.drag-n-drop-game': ApiDragNDropGameDragNDropGame;
       'api::intruder-game.intruder-game': ApiIntruderGameIntruderGame;
       'api::memory-game.memory-game': ApiMemoryGameMemoryGame;
