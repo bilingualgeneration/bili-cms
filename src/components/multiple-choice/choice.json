@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_multiple_choice_choices",
+  "info": {
+    "displayName": "choice",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "isCorrect": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "audio": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "audios"
+      ]
+    },
+    "handle": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

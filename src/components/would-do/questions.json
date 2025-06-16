@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_would_do_questions",
+  "info": {
+    "displayName": "questions"
+  },
+  "options": {},
+  "attributes": {
+    "handle": {
+      "type": "string"
+    },
+    "hint": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.multilingual-text-and-audio",
+      "required": true
+    },
+    "question": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.multilingual-text-and-audio",
+      "required": true
+    }
+  }
+}

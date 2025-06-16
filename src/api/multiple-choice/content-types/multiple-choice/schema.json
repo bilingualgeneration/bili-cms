@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "multiple_choices",
+  "info": {
+    "singularName": "multiple-choice",
+    "pluralName": "multiple-choices",
+    "displayName": "Multiple Choice",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "handle": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "uuid": {
+      "type": "customField",
+      "options": {
+        "uuid-format": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+        "disable-regenerate": true
+      },
+      "customField": "plugin::strapi-advanced-uuid.uuid"
+    },
+    "language": {
+      "type": "customField",
+      "default": "[]",
+      "options": [
+        "en",
+        "es",
+        "es-inc",
+        "en.es",
+        "en.es-inc"
+      ],
+      "customField": "plugin::multi-select.multi-select",
+      "required": true
+    },
+    "instructions": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.multilingual-text-and-audio"
+    },
+    "choices": {
+      "displayName": "choice",
+      "type": "component",
+      "repeatable": true,
+      "component": "multiple-choice.choice"
+    },
+    "story": {
+      "type": "string",
+      "required": false
+    }
+  }
+}

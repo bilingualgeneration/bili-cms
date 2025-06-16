@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sel_questions",
+  "info": {
+    "singularName": "sel-question",
+    "pluralName": "sel-questions",
+    "displayName": "SEL Question"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "uuid": {
+      "type": "customField",
+      "options": {
+        "uuid-format": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+        "disable-regenerate": true
+      },
+      "customField": "plugin::strapi-advanced-uuid.uuid"
+    },
+    "handle": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "question": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.multilingual-text-and-audio"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "feeling",
+        "opinion"
+      ]
+    }
+  }
+}

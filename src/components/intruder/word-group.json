@@ -1,0 +1,69 @@
+{
+  "collectionName": "components_intruder_word_groups",
+  "info": {
+    "displayName": "word group"
+  },
+  "options": {},
+  "attributes": {
+    "intruder_image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "intruder_text": {
+      "type": "string",
+      "required": true
+    },
+    "intruder_audio": {
+      "allowedTypes": [
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "word_2_image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "word_2_text": {
+      "type": "string",
+      "required": true
+    },
+    "word_2_audio": {
+      "allowedTypes": [
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "word_3_text": {
+      "type": "string",
+      "required": true
+    },
+    "word_3_image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "word_3_audio": {
+      "allowedTypes": [
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

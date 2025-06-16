@@ -1,0 +1,79 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dn_ds",
+  "info": {
+    "singularName": "dn-d",
+    "pluralName": "dn-ds",
+    "displayName": "DnD",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "handle": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "uuid": {
+      "type": "customField",
+      "options": {
+        "uuid-format": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+        "disable-regenerate": true
+      },
+      "required": true,
+      "customField": "plugin::strapi-advanced-uuid.uuid"
+    },
+    "target": {
+      "type": "string",
+      "required": true
+    },
+    "pieces": {
+      "displayName": "Piece",
+      "type": "component",
+      "repeatable": true,
+      "component": "dnd-game.piece"
+    },
+    "instructions": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.multilingual-text-and-audio"
+    },
+    "target_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "audio_on_complete": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "audios"
+      ]
+    },
+    "language": {
+      "type": "customField",
+      "default": "[]",
+      "options": [
+        "en",
+        "es",
+        "es-inc",
+        "en.es",
+        "en.es-inc"
+      ],
+      "customField": "plugin::multi-select.multi-select"
+    },
+    "story_factory": {
+      "type": "string"
+    },
+    "story": {
+      "type": "string"
+    }
+  }
+}

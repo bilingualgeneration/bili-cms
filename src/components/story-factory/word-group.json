@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_story_factory_word_groups",
+  "info": {
+    "displayName": "word group"
+  },
+  "options": {},
+  "attributes": {
+    "position": {
+      "type": "integer",
+      "required": true
+    },
+    "word": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.multilingual-text"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_count_with_me_animals",
+  "info": {
+    "displayName": "animal"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "text_color": {
+      "type": "string",
+      "required": true
+    },
+    "x_percent": {
+      "type": "integer",
+      "required": true
+    },
+    "y_percent": {
+      "type": "integer",
+      "required": true
+    }
+  }
+}

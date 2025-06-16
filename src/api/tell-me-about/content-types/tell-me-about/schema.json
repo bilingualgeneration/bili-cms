@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tell_me_abouts",
+  "info": {
+    "singularName": "tell-me-about",
+    "pluralName": "tell-me-abouts",
+    "displayName": "Tell Me About"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "uuid": {
+      "type": "customField",
+      "options": {
+        "uuid-format": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+        "disable-regenerate": true
+      },
+      "customField": "plugin::strapi-advanced-uuid.uuid"
+    },
+    "handle": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "pack_name": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.multilingual-text"
+    },
+    "cover_image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "questions": {
+      "displayName": "questions",
+      "type": "component",
+      "repeatable": true,
+      "component": "would-do.questions"
+    }
+  }
+}

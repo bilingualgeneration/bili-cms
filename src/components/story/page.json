@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_story_pages",
+  "info": {
+    "displayName": "page",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "text": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.multilingual-text-and-audio",
+      "required": true
+    },
+    "handle": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    }
+  }
+}

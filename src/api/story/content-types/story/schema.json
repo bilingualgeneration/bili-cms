@@ -1,0 +1,110 @@
+{
+  "kind": "collectionType",
+  "collectionName": "stories",
+  "info": {
+    "singularName": "story",
+    "pluralName": "stories",
+    "displayName": "Story",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.multilingual-text"
+    },
+    "cover_image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "age_min": {
+      "type": "integer",
+      "required": true
+    },
+    "age_max": {
+      "type": "integer",
+      "required": true
+    },
+    "pages": {
+      "displayName": "page",
+      "type": "component",
+      "repeatable": true,
+      "component": "story.page"
+    },
+    "handle": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "uuid": {
+      "type": "customField",
+      "options": {
+        "uuid-format": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+        "disable-regenerate": true
+      },
+      "customField": "plugin::strapi-advanced-uuid.uuid"
+    },
+    "author": {
+      "type": "string",
+      "required": true
+    },
+    "narrator": {
+      "type": "string",
+      "required": true
+    },
+    "order": {
+      "type": "decimal",
+      "required": true
+    },
+    "is_student_story": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "is_translanguaged": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "illustrator": {
+      "type": "string",
+      "required": true
+    },
+    "tags": {
+      "type": "customField",
+      "default": "[]",
+      "options": [
+        "allAboutMe",
+        "indigenousNarratives",
+        "familyAndCommunity",
+        "nature",
+        "decodables"
+      ],
+      "customField": "plugin::multi-select.multi-select"
+    },
+    "text_size": {
+      "type": "enumeration",
+      "enum": [
+        "small",
+        "default",
+        "large"
+      ],
+      "default": "default",
+      "required": true
+    },
+    "ordered_tag": {
+      "displayName": "ordered tag",
+      "type": "component",
+      "repeatable": true,
+      "component": "story.ordered-tag"
+    }
+  }
+}

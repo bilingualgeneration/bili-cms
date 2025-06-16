@@ -1,0 +1,59 @@
+{
+  "collectionName": "components_count_with_me_groups",
+  "info": {
+    "displayName": "group",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "game_text": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.multilingual-text-and-audio"
+    },
+    "fact_text": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.multilingual-text-and-audio"
+    },
+    "animals": {
+      "displayName": "animal",
+      "type": "component",
+      "repeatable": true,
+      "component": "count-with-me.animal"
+    },
+    "game_background_image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "fact_background_image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "counting_text": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.multilingual-text-and-audio"
+    },
+    "counting_voice": {
+      "type": "enumeration",
+      "enum": [
+        "gloria",
+        "walter"
+      ]
+    },
+    "handle": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    }
+  }
+}

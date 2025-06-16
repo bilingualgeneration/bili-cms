@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_dnd_game_pieces",
+  "info": {
+    "displayName": "Piece",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "audio_on_drag": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "audios"
+      ]
+    },
+    "audio_on_drop": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "audios"
+      ]
+    },
+    "count": {
+      "type": "integer",
+      "required": true
+    }
+  }
+}

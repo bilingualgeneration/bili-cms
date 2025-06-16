@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_affirmations_affirmations_cards",
+  "info": {
+    "displayName": "card",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text_front": {
+      "displayName": "multilingual text and audio",
+      "type": "component",
+      "repeatable": true,
+      "component": "common.multilingual-text-and-audio"
+    },
+    "text_back": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.multilingual-text-and-audio"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "handle": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

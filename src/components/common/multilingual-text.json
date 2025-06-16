@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_common_multilingual_texts",
+  "info": {
+    "displayName": "multilingual text",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "language": {
+      "type": "enumeration",
+      "enum": [
+        "en",
+        "es",
+        "es-inc",
+        "en.es",
+        "en.es-inc"
+      ],
+      "required": true
+    },
+    "text": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

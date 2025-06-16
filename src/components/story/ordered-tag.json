@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_story_ordered_tags",
+  "info": {
+    "displayName": "ordered tag",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "tag": {
+      "type": "enumeration",
+      "enum": [
+        "allAboutMe",
+        "indigenousNarratives",
+        "familyAndCommunity",
+        "nature",
+        "decodables"
+      ]
+    },
+    "order": {
+      "type": "decimal"
+    }
+  }
+}
