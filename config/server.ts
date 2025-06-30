@@ -4,5 +4,5 @@ export default ({ env }) => ({
   app: {
     keys: env.array('APP_KEYS'),
   },
-  url: 'http://3.16.176.64'
+  url: 'https://bili-strapi-dev.blufiori.co'
 });
